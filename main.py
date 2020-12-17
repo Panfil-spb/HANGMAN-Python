@@ -61,6 +61,20 @@ def hangmanView(i):
                       ==="""]
     print(hangman[i])
 
+def showWord(used, word):
+    for i in range(word):
+        if word[i] in used:
+            print(word[i], end = "")
+        else:
+            print('-', end = "")
+
+def game(word):
+    wrong = 0
+    used = []
+    while wrong != 6:
+
+
+
 
 def main():
     hello()
