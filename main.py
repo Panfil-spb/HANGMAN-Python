@@ -16,7 +16,58 @@ def choiseWord():
     words = ["висилица", "постамент", "веревка", "человек"]
     return random.choice(words)
 
+def hangmanView(i):
+    hangman = [""" 
+                   +---+
+                       |
+                       |
+                       |
+                      ===""",
+               """
+                   +---+
+                   0   |
+                       |
+                       |
+                      ===""",
+               """
+                   +---+
+                   0    |
+                   |    |
+                        |
+                       ===""",
+               """
+                   +---+
+                   0    |
+                  /|    |
+                        |
+                       ===""",
+               """
+                   +---+
+                   0    |
+                  /|\   |
+                        |
+                       ===""",
+               """
+                   +---+
+                   0    |
+                  /|\   |
+                  /     |
+                       ===""",
+               """
+                   +---+
+                   0    |
+                  /|\   |
+                  / \   |
+                       ==="""]
+    print(hangman[i])
+
+
 def main():
     hello()
+    word = choiseWord()
+    for i in range(7):
+        hangmanView(i)
+
+
 
 main()
