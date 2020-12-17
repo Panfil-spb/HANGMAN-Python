@@ -12,6 +12,9 @@ def hello():
                 With each wrong letter choice, a new drawing of the hanged man appears.
                             Have a nice game!""")
 
+def choiseWord():
+    words = ["висилица", "постамент", "веревка", "человек"]
+    return random.choice(words)
 
 def main():
     hello()
