@@ -10,8 +10,7 @@ def hello():
                         Hello, this is Hangman game.
         The essence of the game is to guess a word letter by letter, the number of attempts is limited.
                 With each wrong letter choice, a new drawing of the hanged man appears.
-                            Have a nice game!
-            """)
+                            Have a nice game!""")
 
 
 def main():
