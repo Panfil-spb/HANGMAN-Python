@@ -107,16 +107,9 @@ def game(word):
         print("К сожалению, вы проиграли!"
               "\nСлово, которое вы не отгадали '" + word + "'!")
 
-
-
-
-
-
 def main():
     hello()
     word = choiseWord()
     game(word)
-
-
 
 main()
