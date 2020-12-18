@@ -62,16 +62,52 @@ def hangmanView(i):
     print(hangman[i])
 
 def showWord(used, word):
-    for i in range(word):
+    wordGame = ""
+    for i in range(len(word)):
         if word[i] in used:
-            print(word[i], end = "")
+            wordGame += word[i]
         else:
-            print('-', end = "")
+            wordGame += "-"
+    return wordGame
+
+def checkWon(used, word):
+    if '-' not in showWord(used, word):
+        return 1
+    else:
+        return 0
 
 def game(word):
     wrong = 0
     used = []
+    alphabet = "йцукенгшщзхъфывапролджэячсмитьбю"
     while wrong != 6:
+        hangmanView(wrong)
+        gameWord = showWord(used, word)
+
+        print(gameWord)
+        while 1:
+            userLitter = input("Введите букву которую хотите проверить: ")
+            if userLitter.lower() in used:
+                print("Введите букву которую вы ещё не вводили!")
+            elif userLitter.lower() not in alphabet:
+                print("Введите букву русскаого алфавита!")
+            else:
+                used.append(userLitter.lower())
+                if userLitter.lower() not in word:
+                    wrong += 1
+                break
+        check = checkWon(used, word)
+        if check == 1:
+            break
+    if check == 1:
+        print("Поздравляю, вы победили!"
+              "\nВы отгадали слово '" + word + "'!")
+    if wrong == 6:
+        hangmanView(wrong)
+        print("К сожалению, вы проиграли!"
+              "\nСлово, которое вы не отгадали '" + word + "'!")
+
+
 
 
 
@@ -79,6 +115,7 @@ def game(word):
 def main():
     hello()
     word = choiseWord()
+    game(word)
 
 
 
